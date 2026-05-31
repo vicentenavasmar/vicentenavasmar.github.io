@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicente Navas Martínez | Portfolio & CV</title>
+  <meta name="description" content="Personal portfolio of Vicente Navas Martínez — projects, education, certifications and skills.">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@400,500,700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --color-bg: #f7f6f2; --color-surface: #f9f8f5;
+      --color-surface-offset: #f3f0ec; --color-border: #d4d1ca;
+      --color-text: #28251d; --color-text-muted: #6f6c66;
+      --color-primary: #01696f; --color-primary-hover: #0c4e54; --color-primary-highlight: #d9ece9;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.05); --shadow-md: 0 10px 30px rgba(0,0,0,.08);
+      --radius-sm: .5rem; --radius-md: .85rem; --radius-lg: 1.2rem; --radius-full: 9999px;
+      --text-xs: clamp(.75rem,.7rem + .25vw,.875rem); --text-sm: clamp(.875rem,.8rem + .35vw,1rem);
+      --text-base: clamp(1rem,.95rem + .25vw,1.125rem); --text-lg: clamp(1.125rem,1rem + .75vw,1.5rem);
+      --text-xl: clamp(1.5rem,1.2rem + 1.25vw,2.25rem); --text-2xl: clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --font-body: 'Satoshi', system-ui, sans-serif; --font-display: 'Boska', Georgia, serif;
+    }
+    [data-theme="dark"] {
+      --color-bg: #171614; --color-surface: #1c1b19;
+      --color-surface-offset: #201f1d; --color-border: #393836;
+      --color-text: #ece9e2; --color-text-muted: #aaa59d;
+      --color-primary: #4f98a3; --color-primary-hover: #66b4bf; --color-primary-highlight: #253739;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.18); --shadow-md: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    /* Language visibility — CSS-driven, JS only sets data-lang on <html> */
+    .t-es { display: none; }
+    .t-en { display: inline; }
+    [data-lang="es"] .t-es { display: inline; }
+    [data-lang="es"] .t-en { display: none; }
+    .tb-es { display: none; }
+    .tb-en { display: block; }
+    [data-lang="es"] .tb-es { display: block; }
+    [data-lang="es"] .tb-en { display: none; }
+    .tli-es { display: none; }
+    .tli-en { display: list-item; }
+    [data-lang="es"] .tli-es { display: list-item; }
+    [data-lang="es"] .tli-en { display: none; }
+    /* Skill bubble variants */
+    .tbub-es { display: none; }
+    .tbub-en { display: inline-flex; }
+    [data-lang="es"] .tbub-es { display: inline-flex; }
+    [data-lang="es"] .tbub-en { display: none; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6; background: var(--color-bg); color: var(--color-text); }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; border: none; background: none; cursor: pointer; }
+
+    .container { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+    .skip-link { position: absolute; left: -9999px; top: auto; }
+    .skip-link:focus { left:1rem; top:1rem; z-index:1000; background:var(--color-primary); color:white; padding:.8rem 1rem; border-radius:var(--radius-sm); }
+
+    .site-header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); background: color-mix(in srgb, var(--color-bg) 82%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent); }
+    .header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; }
+    .brand { display: flex; align-items: center; font-weight: 700; }
+
+    nav ul { display: flex; gap: 1rem; list-style: none; flex-wrap: wrap; }
+    nav a { font-size: var(--text-sm); color: var(--color-text-muted); padding: .55rem .8rem; border-radius: var(--radius-full); }
+    nav a:hover, nav a:focus-visible { background: var(--color-surface-offset); color: var(--color-text); }
+
+    .header-actions { display: flex; align-items: center; gap: .75rem; }
+    .theme-toggle, .lang-toggle {
+      height: 44px; display: grid; place-items: center; border-radius: var(--radius-full);
+      background: var(--color-surface-offset); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      color: var(--color-text); transition: background .2s ease;
+    }
+    .theme-toggle { width: 44px; }
+    .lang-toggle { padding: 0 .85rem; font-size: var(--text-sm); font-weight: 700; }
+    .theme-toggle:hover, .lang-toggle:hover { background: var(--color-border); }
+
+    .hero { padding: clamp(3rem,8vw,7rem) 0 4rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr .95fr; gap: 2rem; align-items: center; }
+    .hero-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); box-shadow: var(--shadow-md); }
+
+    .eyebrow { display: inline-flex; gap: .5rem; align-items: center; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .12em; color: var(--color-primary); background: var(--color-primary-highlight); padding: .5rem .8rem; border-radius: var(--radius-full); margin-bottom: 1rem; }
+    h1 { font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1.02; margin-bottom: 1rem; }
+    .lead { color: var(--color-text-muted); max-width: 60ch; margin-bottom: 1.5rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .65rem; min-height: 46px; padding: .9rem 1.15rem; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 700; border: 1px solid transparent; transition: .2s ease; }
+    .btn-primary { background: var(--color-primary); color: white; }
+    .btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-1px); }
+    .btn-secondary { background: var(--color-surface); color: var(--color-text); border-color: color-mix(in srgb, var(--color-text) 12%, transparent); }
+    .btn-secondary:hover { background: var(--color-surface-offset); }
+
+    .card, .timeline-item, .project-card, .contact-card, .skill-card {
+      background: var(--color-surface); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+    }
+    .card, .skill-card { padding: 1.35rem; }
+    .timeline-item, .project-card { padding: 1.25rem; }
+
+    section { padding: clamp(2.5rem,6vw,5rem) 0; }
+    .section-head { margin-bottom: 1.5rem; }
+    .section-head p { color: var(--color-text-muted); max-width: 62ch; }
+    h2 { font-size: var(--text-xl); margin-bottom: .4rem; }
+    h3 { font-size: var(--text-lg); margin-bottom: .35rem; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.2rem; }
+    .project-card { display: flex; flex-direction: column; gap: 1rem; }
+    .project-top { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .tag { font-size: var(--text-xs); padding: .35rem .65rem; border-radius: var(--radius-full); background: var(--color-surface-offset); color: var(--color-text-muted); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); }
+
+    .skills-grid { display: grid; gap: 1rem; }
+    .skill-card h3 { font-size: var(--text-lg); margin-bottom: .35rem; }
+    .skill-card > p { color: var(--color-text-muted); }
+    .skills-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .75rem; }
+    .skills-tags .bubble { background: var(--color-surface-offset); padding: .45rem .8rem; border-radius: var(--radius-full); font-size: var(--text-sm); border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent); align-items: center; }
+
+    .timeline { display: grid; gap: 1rem; }
+    .timeline-item p, .muted { color: var(--color-text-muted); }
+    .timeline-item ul { margin-top: .6rem; padding-left: 1.25rem; color: var(--color-text-muted); }
+
+    .contact-card { padding: 1.5rem; display: grid; grid-template-columns: 1.2fr .8fr; gap: 1.25rem; align-items: center; }
+    .contact-list { display: grid; gap: .75rem; }
+    .contact-list a { color: var(--color-primary); font-weight: 700; }
+
+    .site-footer { padding: 2rem 0 3rem; }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+
+    @media (max-width: 920px) {
+      .hero-grid, .projects-grid, .contact-card { grid-template-columns: 1fr; }
+      .header-row { flex-wrap: wrap; }
+      nav { order: 3; width: 100%; }
+      nav ul { justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(100% - 1rem, 1120px); }
+      .hero-actions, .header-actions { width: 100%; }
+      .hero-actions .btn, .header-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+
+
+<body>
+  <a href="#content" class="skip-link">
+    <span class="t-en">Skip to content</span><span class="t-es">Saltar al contenido</span>
+  </a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="#home" class="brand">Vicente Navas Martínez</a>
+      <nav>
+        <ul>
+          <li><a href="#projects"><span class="t-en">Projects</span><span class="t-es">Proyectos</span></a></li>
+          <li><a href="#skills"><span class="t-en">Skills</span><span class="t-es">Habilidades</span></a></li>
+          <li><a href="#education"><span class="t-en">Education</span><span class="t-es">Educación</span></a></li>
+          <li><a href="#certifications"><span class="t-en">Certifications</span><span class="t-es">Licencias</span></a></li>
+          <li><a href="#contact"><span class="t-en">Contact</span><span class="t-es">Contacto</span></a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme"></button>
+        <button class="lang-toggle" id="langBtn">
+          <span class="t-en">ES</span><span class="t-es">EN</span>
+        </button>
+        <a class="btn btn-primary cv-btn"
+           href="./Resume-Vicente-Navas-Martinez-English.pdf"
+           download>
+          <span class="t-en">Download CV</span><span class="t-es">Descargar CV</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">
+            <span class="t-en">Computer Science Engineer</span>
+            <span class="t-es">Ingeniero Informático</span>
+          </span>
+          <h1>Vicente Navas Martínez</h1>
+          <p class="lead tb-en">Computer Engineer with solid training in hardware architecture and backend development. Strong ability to analyze complex problems and find efficient solutions. Passionate about team leadership, with experience helping teams perform at their best during collaborative university projects. Currently pending internships and final degree project in the 2026-27 academic year.</p>
+          <p class="lead tb-es">Ingeniero Informático con sólida formación en arquitectura hardware y desarrollo backend. Con gran habilidad para analizar problemas complejos y encontrar la manera de resolverlos. Apasionado por dirigir equipos, habiendo logrado sacar lo mejor de todos los grupos de trabajo en los que he estado involucrado durante la carrera. A falta de prácticas y trabajo de fin de grado en el curso 26/27.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary cv-btn"
+               href="./Resume-Vicente-Navas-Martinez-English.pdf"
+               download>
+              <span class="t-en">Download CV</span><span class="t-es">Descargar CV</span>
+            </a>
+            <a class="btn btn-secondary" href="#contact">
+              <span class="t-en">Contact</span><span class="t-es">Contactar</span>
+            </a>
+          </div>
+        </div>
+        <img class="hero-photo" src="./FotoCamisa.png" alt="Vicente Navas Martínez" />
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2><span class="t-en">Projects</span><span class="t-es">Proyectos</span></h2>
+        </div>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">Big Data Analysis</h3>
+                <h3 class="tb-es">Análisis de Big Data</h3>
+                <p class="muted tb-en">High-performance parallel and distributed computing.</p>
+                <p class="muted tb-es">Computación paralela y aceleración de alto rendimiento.</p>
+              </div>
+              <span class="tag"><span class="t-en">Featured</span><span class="t-es">Destacado</span></span>
+            </div>
+            <p class="tb-en">Developed shared-memory parallelism applications with OpenMP, distributed cluster computing with OpenMPI, and GPU acceleration with OpenACC.</p>
+            <p class="tb-es">Desarrollé aplicaciones de paralelismo en memoria compartida (OpenMP), computación distribuida en clúster (OpenMPI) y aceleración por GPU (OpenACC).</p>
+            <div class="tag-list">
+              <span class="tag">OpenMP</span><span class="tag">OpenMPI</span><span class="tag">OpenACC</span><span class="tag">GPU</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">Web Application Analysis, Design, Implementation and Evaluation</h3>
+                <h3 class="tb-es">Análisis, diseño, implementación y evaluación de webapp</h3>
+                <p class="muted tb-en">Frontend development and user-based validation.</p>
+                <p class="muted tb-es">Desarrollo frontend y validación con usuarios reales.</p>
+              </div>
+            </div>
+            <p class="tb-en">HTML development with prototypes, evaluation with real users, and data-driven redesign. Led the team across 5 months of work.</p>
+            <p class="tb-es">Desarrollo HTML con prototipos, evaluación con usuarios reales y rediseño data-driven. Liderazgo del equipo durante los 5 meses de trabajo.</p>
+            <div class="tag-list">
+              <span class="tag">HTML</span><span class="tag">UX</span>
+              <span class="tag tbub-en">Prototyping</span>
+              <span class="tag tbub-es">Prototipado</span>
+              <span class="tag">Team Leadership</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">Thread Management for Real-World Examples</h3>
+                <h3 class="tb-es">Manejo de Threads para Ejemplos Reales</h3>
+                <p class="muted tb-en">Concurrent simulation in C.</p>
+                <p class="muted tb-es">Simulación concurrente en C.</p>
+              </div>
+            </div>
+            <p class="tb-en">Developed a vaccination simulator in C to manage real-world situations, with a focus on thread management and concurrency.</p>
+            <p class="tb-es">Desarrollé un simulador de vacunación en C para gestionar situaciones reales con enfoque en gestión de hilos y concurrencia.</p>
+            <div class="tag-list">
+              <span class="tag">C</span><span class="tag">Threads</span><span class="tag">Concurrency</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">Complete Game Developed in Java</h3>
+                <h3 class="tb-es">Juego Completo Desarrollado en Java</h3>
+                <p class="muted tb-en">Full Minesweeper with persistence and GUI.</p>
+                <p class="muted tb-es">Buscaminas completo con persistencia y GUI.</p>
+              </div>
+            </div>
+            <p class="tb-en">Complete Minesweeper game with an interactive GUI, role system for players and administrators, and a persistent ranking connected to MySQL via JDBC.</p>
+            <p class="tb-es">Juego completo de Buscaminas con GUI interactiva, sistema de roles para jugadores y administradores, y rankings persistentes conectados a MySQL mediante JDBC.</p>
+            <div class="tag-list">
+              <span class="tag">Java</span><span class="tag">MySQL</span><span class="tag">JDBC</span><span class="tag">GUI</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <h2><span class="t-en">Skills</span><span class="t-es">Habilidades</span></h2>
+        </div>
+        <div class="skills-grid">
+
+          <article class="skill-card">
+            <h3><span class="t-en">Languages</span><span class="t-es">Idiomas</span></h3>
+            <p class="tb-en">Spoken and written languages.</p>
+            <p class="tb-es">Idiomas hablados y escritos.</p>
+            <div class="skills-tags">
+              <span class="bubble tbub-en">Spanish — Native</span>
+              <span class="bubble tbub-es">Castellano — Nativo</span>
+              <span class="bubble tbub-en">English — Advanced (C1)</span>
+              <span class="bubble tbub-es">Inglés — Avanzado (C1)</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Hardware</h3>
+            <p class="tb-en">Architecture and low-level computing.</p>
+            <p class="tb-es">Arquitectura y computación de bajo nivel.</p>
+            <div class="skills-tags">
+              <span class="bubble tbub-en">Von Neumann Architecture</span>
+              <span class="bubble tbub-es">Arquitectura Von Neumann</span>
+              <span class="bubble tbub-en">CPU, Cache &amp; Virtual Memory</span>
+              <span class="bubble tbub-es">CPU, Memoria Caché/Virtual</span>
+              <span class="bubble tbub-en">I/O &amp; Buses</span>
+              <span class="bubble tbub-es">E/S y Buses</span>
+              <span class="bubble tbub-en">MIPS / Assembly</span>
+              <span class="bubble tbub-es">MIPS / Ensamblador</span>
+              <span class="bubble tbub-en">Superscalar</span>
+              <span class="bubble tbub-es">Superescalar</span>
+              <span class="bubble">SMP / NUMA</span>
+              <span class="bubble">CUDA GPUs</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Software</h3>
+            <p class="tb-en">Programming languages, frameworks and databases.</p>
+            <p class="tb-es">Lenguajes de programación, frameworks y bases de datos.</p>
+            <div class="skills-tags">
+              <span class="bubble">Java</span>
+              <span class="bubble">Python</span>
+              <span class="bubble">C++</span>
+              <span class="bubble">C</span>
+              <span class="bubble">Scala</span>
+              <span class="bubble">HTML</span>
+              <span class="bubble">SQL ANSI</span>
+              <span class="bubble">MySQL</span>
+              <span class="bubble">Oracle</span>
+              <span class="bubble">SQL Server</span>
+              <span class="bubble">OpenMP</span>
+              <span class="bubble">OpenMPI</span>
+              <span class="bubble">OpenACC</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <div class="section-head">
+          <h2><span class="t-en">Education</span><span class="t-es">Educación</span></h2>
+        </div>
+        <div class="timeline">
+
+          <!-- URJC -->
+          <article class="timeline-item">
+            <h3>Universidad Rey Juan Carlos</h3>
+            <p class="muted">
+              <span class="t-en">Degree in Computer Engineering</span>
+              <span class="t-es">Grado en Ingeniería Informática</span>
+              · 09/2022 – <span class="t-en">Present</span><span class="t-es">Actualidad</span>
+            </p>
+            <ul>
+              <li class="tli-en">Endorsed by the international EURO-INF quality seal.</li>
+              <li class="tli-es">Avalado por el sello internacional de calidad EURO-INF.</li>
+              <li class="tli-en">With distinction (highest honors) in Artificial Intelligence and Embedded and Real-Time Systems.</li>
+              <li class="tli-es">Matrícula de honor en Inteligencia Artificial y Sistemas Empotrados y De Tiempo Real.</li>
+              <li class="tli-en">Pending internships and final degree project in the 2026-27 course.</li>
+              <li class="tli-es">A falta de prácticas y trabajo de fin de grado en el curso 26/27.</li>
+            </ul>
+          </article>
+
+          <!-- VIZJA -->
+          <article class="timeline-item">
+            <h3>Uniwersytet VIZJA</h3>
+            <p class="muted">
+              <span class="t-en">Computer Science — Erasmus Programme</span>
+              <span class="t-es">Informática — Programa Erasmus</span>
+              · 02/2025 – 06/2025
+            </p>
+            <p class="tb-en">Exchange semester at VIZJA University in Warsaw, Poland as part of the Erasmus+ programme.</p>
+            <p class="tb-es">Semestre de intercambio en VIZJA University en Varsovia, Polonia, dentro del programa Erasmus+.</p>
+          </article>
+
+          <!-- Bachillerato -->
+          <article class="timeline-item">
+            <h3><span class="t-en">Scientific Baccalaureate</span><span class="t-es">Bachillerato Científico</span></h3>
+            <p class="muted">IES Alfredo Kraus · 09/2020 – 07/2022</p>
+            <p class="tb-en">Pre-university scientific track leading to the Computer Engineering degree.</p>
+            <p class="tb-es">Bachillerato de ciencias previo al Grado en Ingeniería Informática.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="container">
+        <div class="section-head">
+          <h2><span class="t-en">Certifications</span><span class="t-es">Licencias</span></h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>C1 Advanced Certificate (Cambridge English)</h3>
+            <p class="muted">Cambridge English · 13/12/2025</p>
+            <p class="tb-en">Official advanced-level English certification issued by Cambridge Assessment English.</p>
+            <p class="tb-es">Certificación oficial de inglés de nivel avanzado emitida por Cambridge Assessment English.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <h2><span class="t-en">Contact</span><span class="t-es">Contacto</span></h2>
+            <p class="muted tb-en">Feel free to reach out via email or phone.</p>
+            <p class="muted tb-es">No dudes en contactarme por correo electrónico o teléfono.</p>
+          </div>
+          <div class="contact-list">
+            <a href="mailto:vicente.navas.martinez@gmail.com">vicente.navas.martinez@gmail.com</a>
+            <a href="tel:+34638270132">+34 638 27 01 32</a>
+            <span class="muted">Travesía De Capri 5, Madrid, España</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"><div class="container"></div></footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+
+      // ── Theme ──────────────────────────────────────────────────────
+      const themeBtn = document.getElementById('themeBtn');
+      let theme = 'light';
+      const ICONS = {
+        light: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+        dark:  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      };
+      function setTheme(t) {
+        theme = t;
+        root.setAttribute('data-theme', t);
+        themeBtn.innerHTML = ICONS[t];
+      }
+      setTheme('light');
+      themeBtn.addEventListener('click', () => setTheme(theme === 'light' ? 'dark' : 'light'));
+
+      // ── Language ───────────────────────────────────────────────────
+      const langBtn = document.getElementById('langBtn');
+      const CV_EN = './Resume-Vicente-Navas-Martinez-English.pdf';
+      const CV_ES = './Curriculum-Vicente-Navas-Martinez.pdf';
+      let lang = 'en';
+
+      function setLang(l) {
+        lang = l;
+        root.setAttribute('data-lang', l);
+        root.lang = l;
+        document.querySelectorAll('.cv-btn').forEach(btn => {
+          btn.href = l === 'es' ? CV_ES : CV_EN;
+          btn.setAttribute('download', l === 'es'
+            ? 'Curriculum-Vicente-Navas-Martinez.pdf'
+            : 'Resume-Vicente-Navas-Martinez-English.pdf');
+        });
+      }
+
+      setLang('en');
+      langBtn.addEventListener('click', () => setLang(lang === 'en' ? 'es' : 'en'));
+    })();
+  </script>
+</body>
+</html>
