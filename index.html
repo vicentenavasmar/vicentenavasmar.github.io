@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicente Navas Martínez | Portfolio & CV</title>
+  <meta name="description"
+    content="Personal portfolio of Vicente Navas Martínez — projects, education, certifications and skills.">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@400,500,700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root,
+    [data-theme="light"] {
+      --color-bg: #f7f6f2;
+      --color-surface: #f9f8f5;
+      --color-surface-offset: #f3f0ec;
+      --color-border: #d4d1ca;
+      --color-text: #28251d;
+      --color-text-muted: #6f6c66;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #d9ece9;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, .08);
+      --radius-sm: .5rem;
+      --radius-md: .85rem;
+      --radius-lg: 1.2rem;
+      --radius-full: 9999px;
+      --text-xs: clamp(.75rem, .7rem + .25vw, .875rem);
+      --text-sm: clamp(.875rem, .8rem + .35vw, 1rem);
+      --text-base: clamp(1rem, .95rem + .25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + .75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --font-body: 'Satoshi', system-ui, sans-serif;
+      --font-display: 'Boska', Georgia, serif;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #171614;
+      --color-surface: #1c1b19;
+      --color-surface-offset: #201f1d;
+      --color-border: #393836;
+      --color-text: #ece9e2;
+      --color-text-muted: #aaa59d;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #66b4bf;
+      --color-primary-highlight: #253739;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .18);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, .25);
+    }
+
+    /* Language visibility — CSS-driven, JS only sets data-lang on <html> */
+    .t-es {
+      display: none;
+    }
+
+    .t-en {
+      display: inline;
+    }
+
+    [data-lang="es"] .t-es {
+      display: inline;
+    }
+
+    [data-lang="es"] .t-en {
+      display: none;
+    }
+
+    .tb-es {
+      display: none;
+    }
+
+    .tb-en {
+      display: block;
+    }
+
+    [data-lang="es"] .tb-es {
+      display: block;
+    }
+
+    [data-lang="es"] .tb-en {
+      display: none;
+    }
+
+    .tli-es {
+      display: none;
+    }
+
+    .tli-en {
+      display: list-item;
+    }
+
+    [data-lang="es"] .tli-es {
+      display: list-item;
+    }
+
+    [data-lang="es"] .tli-en {
+      display: none;
+    }
+
+    /* Skill bubble variants (still used for tag-list bubbles in Projects) */
+    .tbub-es {
+      display: none;
+    }
+
+    .tbub-en {
+      display: inline-flex;
+    }
+
+    [data-lang="es"] .tbub-es {
+      display: inline-flex;
+    }
+
+    [data-lang="es"] .tbub-en {
+      display: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 1000;
+      background: var(--color-primary);
+      color: white;
+      padding: .8rem 1rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      padding: .55rem .8rem;
+      border-radius: var(--radius-full);
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      background: var(--color-surface-offset);
+      color: var(--color-text);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      position: relative;
+    }
+
+    .theme-toggle,
+    .lang-toggle {
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-offset);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      color: var(--color-text);
+      transition: background .2s ease;
+    }
+
+    .theme-toggle {
+      width: 44px;
+    }
+
+    .lang-toggle {
+      padding: 0 .85rem;
+      font-size: var(--text-sm);
+      font-weight: 700;
+    }
+
+    .theme-toggle:hover,
+    .lang-toggle:hover {
+      background: var(--color-border);
+    }
+
+    /* Language dropdown (select styled like lang-toggle) */
+    .lang-select {
+      height: 44px;
+      padding: 0 2rem 0 .85rem;
+      font-size: var(--text-sm);
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-offset);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      color: var(--color-text);
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2328251d' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right .8rem center;
+    }
+
+    .lang-select:hover {
+      background-color: var(--color-border);
+    }
+
+    /* CV dropdown */
+    .cv-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .cv-menu {
+      position: absolute;
+      top: calc(100% + .5rem);
+      right: 0;
+      min-width: 220px;
+      background: var(--color-surface);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      padding: .4rem;
+      display: none;
+      flex-direction: column;
+      z-index: 60;
+    }
+
+    .cv-dropdown.open .cv-menu {
+      display: flex;
+    }
+
+    .cv-menu a {
+      padding: .6rem .75rem;
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
+      color: var(--color-text);
+    }
+
+    .cv-menu a:hover {
+      background: var(--color-surface-offset);
+    }
+
+    .hero {
+      padding: clamp(3rem, 8vw, 7rem) 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .95fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: .5rem;
+      align-items: center;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--color-primary);
+      background: var(--color-primary-highlight);
+      padding: .5rem .8rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1.02;
+      margin-bottom: .5rem;
+    }
+
+    .hero-location {
+      display: block;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      margin-bottom: 1rem;
+    }
+
+    .lead {
+      color: var(--color-text-muted);
+      max-width: 60ch;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .65rem;
+      min-height: 46px;
+      padding: .9rem 1.15rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--color-surface);
+      color: var(--color-text);
+      border-color: color-mix(in srgb, var(--color-text) 12%, transparent);
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-surface-offset);
+    }
+
+    .card,
+    .timeline-item,
+    .project-card,
+    .contact-card {
+      background: var(--color-surface);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card {
+      padding: 1.35rem;
+    }
+
+    .timeline-item,
+    .project-card {
+      padding: 1.25rem;
+    }
+
+    section {
+      padding: clamp(2.5rem, 6vw, 5rem) 0;
+    }
+
+    .section-head {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-head p {
+      color: var(--color-text-muted);
+      max-width: 62ch;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      margin-bottom: .4rem;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      margin-bottom: .35rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .tag {
+      font-size: var(--text-xs);
+      padding: .35rem .65rem;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-offset);
+      color: var(--color-text-muted);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item p,
+    .muted {
+      color: var(--color-text-muted);
+    }
+
+    .timeline-item ul {
+      margin-top: .6rem;
+      padding-left: 1.25rem;
+      color: var(--color-text-muted);
+    }
+
+    .contact-card {
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .contact-list a {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    .site-footer {
+      padding: 2rem 0 3rem;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 920px) {
+
+      .hero-grid,
+      .projects-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .header-row {
+        flex-wrap: wrap;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 1rem, 1120px);
+      }
+
+      .hero-actions,
+      .header-actions {
+        width: 100%;
+      }
+
+      .hero-actions .btn,
+      .header-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+  <a href="#content" class="skip-link">
+    <span class="t-en">Skip to content</span><span class="t-es">Saltar al contenido</span>
+  </a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="#home" class="brand">Vicente Navas Martínez</a>
+      <nav>
+        <ul>
+          <li><a href="#projects"><span class="t-en">Projects</span><span class="t-es">Proyectos</span></a></li>
+          <li><a href="#education"><span class="t-en">Education</span><span class="t-es">Educación</span></a></li>
+          <li><a href="#certifications"><span class="t-en">Certifications</span><span class="t-es">Licencias</span></a>
+          </li>
+          <li><a href="#contact"><span class="t-en">Contact</span><span class="t-es">Contacto</span></a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme"></button>
+        <select class="lang-select" id="langSelect" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+        <div class="cv-dropdown" data-cv-dropdown>
+          <button type="button" class="btn btn-primary cv-btn" data-cv-toggle>
+            <span class="t-en">Download CV</span><span class="t-es">Descargar CV</span>
+          </button>
+          <div class="cv-menu">
+            <a href="./Resume-Vicente-Navas-Martinez-English.pdf"
+              download="Resume-Vicente-Navas-Martinez-English.pdf">English</a>
+            <a href="./Curriculum-Vicente-Navas-Martinez.pdf"
+              download="Curriculum-Vicente-Navas-Martinez.pdf">Español</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">
+            <span class="t-en">Computer Science Engineer</span>
+            <span class="t-es">Ingeniero Informático</span>
+          </span>
+          <h1>Vicente Navas Martínez</h1>
+          <span class="hero-location">
+            <span class="t-en">Madrid, Spain</span>
+            <span class="t-es">Madrid, España</span>
+          </span>
+          <p class="lead tb-en">Computer Engineer with solid training in hardware architecture and backend development.
+            Strong ability to analyze complex problems and find efficient solutions. Passionate about team leadership,
+            with experience helping teams perform at their best during collaborative university projects. Currently
+            pending internships and final degree project in the 2026-27 academic year.</p>
+          <p class="lead tb-es">Ingeniero Informático con sólida formación en arquitectura hardware y desarrollo
+            backend. Con gran habilidad para analizar problemas complejos y encontrar la manera de resolverlos.
+            Apasionado por dirigir equipos, habiendo logrado sacar lo mejor de todos los grupos de trabajo en los que he
+            estado involucrado durante la carrera. A falta de prácticas y trabajo de fin de grado en el curso 26/27.</p>
+          <div class="hero-actions">
+            <div class="cv-dropdown" data-cv-dropdown>
+              <button type="button" class="btn btn-primary cv-btn" data-cv-toggle>
+                <span class="t-en">Download CV</span><span class="t-es">Descargar CV</span>
+              </button>
+              <div class="cv-menu">
+                <a href="./Resume-Vicente-Navas-Martinez-English.pdf"
+                  download="Resume-Vicente-Navas-Martinez-English.pdf">English</a>
+                <a href="./Curriculum-Vicente-Navas-Martinez.pdf"
+                  download="Curriculum-Vicente-Navas-Martinez.pdf">Español</a>
+              </div>
+            </div>
+            <a class="btn btn-secondary" href="#contact">
+              <span class="t-en">Contact</span><span class="t-es">Contactar</span>
+            </a>
+          </div>
+        </div>
+        <img class="hero-photo" src="./FotoCamisa.png" alt="Vicente Navas Martínez" />
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2><span class="t-en">Projects</span><span class="t-es">Proyectos</span></h2>
+        </div>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">Fortran to C Translator with ANTLR4</h3>
+                <h3 class="tb-es">Traductor de Fortran a C con ANTLR4</h3>
+              </div>
+            </div>
+            <p class="tb-en">Transpiler converting a Fortran subset into C, implemented in Java with ANTLR4, including lexical, syntactic and semantic analysis.</p>
+            <p class="tb-es">Transpilador que convierte un subconjunto de Fortran a C, implementado en Java con ANTLR4, incluyendo análisis léxico, sintáctico y semántico.</p>
+            <ul class="tb-en" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Translation of types, control structures (IF, DO, SELECT CASE) and subprograms (SUBROUTINE/FUNCTION) with pass by reference</li><li>Semantic analysis with detection of name, parameter and intent errors (line/column)</li><li>Support for multi-base literals (binary, octal, hexadecimal)</li><li>Distributed as an executable JAR with bundled ANTLR runtime</li></ul>
+            <ul class="tb-es" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Traducción de tipos, estructuras de control (IF, DO, SELECT CASE) y subprogramas (SUBROUTINE/FUNCTION) con paso por referencia</li><li>Análisis semántico con detección de errores de nombres, parámetros e intenciones (línea/columna)</li><li>Soporte de literales multi-base (binario, octal, hexadecimal)</li><li>Distribuido como JAR ejecutable con runtime de ANTLR incluido</li></ul>
+            <div class="tag-list"><span class="tag">Java</span><span class="tag">ANTLR 4.13.2</span><span class="tag">IntelliJ IDEA</span></div>
+            <a class="btn btn-secondary" href="https://github.com/dgalan2022/PracticaPL" target="_blank" rel="noopener" style="align-self:flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.65.79.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+              <span class="t-en">View on GitHub</span><span class="t-es">Ver en GitHub</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">Control Center for Digital Greenhouse</h3>
+                <h3 class="tb-es">Centro de Control para Invernadero Digital</h3>
+              </div>
+            </div>
+            <p class="tb-en">Greenhouse management web application built in Java 17 with Spring Boot, tracking plants, zones and care cycles via web interface and REST API.</p>
+            <p class="tb-es">Aplicación web de gestión de invernadero desarrollada en Java 17 con Spring Boot, que permite el seguimiento de plantas, zonas y ciclos de cuidado mediante interfaz web y API REST.</p>
+            <ul class="tb-en" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Management of plants, greenhouse zones and care tasks with relationships between them</li><li>Dual REST API (JSON) with independent web controllers using Mustache templates</li><li>Persistence with H2 database in file mode and inspection console enabled</li><li>Postman collection included to test all endpoints</li></ul>
+            <ul class="tb-es" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Gestión de plantas, zonas de invernadero y tareas de cuidado con relaciones entre ellas</li><li>API REST dual (JSON) con controladores web independientes usando plantillas Mustache</li><li>Persistencia con base de datos H2 en modo archivo y consola de inspección habilitada</li><li>Colección Postman incluida para probar todos los endpoints</li></ul>
+            <div class="tag-list"><span class="tag">Java 17</span><span class="tag">Spring Boot</span><span class="tag">Spring Data JPA</span><span class="tag">Hibernate</span><span class="tag">H2 Database</span><span class="tag">Mustache</span><span class="tag">Maven</span><span class="tag">Postman</span></div>
+            <a class="btn btn-secondary" href="https://github.com/josanchdev/Leafy" target="_blank" rel="noopener" style="align-self:flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.65.79.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+              <span class="t-en">View on GitHub</span><span class="t-es">Ver en GitHub</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">3D Simulation with OpenGL</h3>
+                <h3 class="tb-es">Simulación 3D con OpenGL</h3>
+              </div>
+            </div>
+            <p class="tb-en">Three-dimensional simulation of an industrial plant with articulated robotic arms built in C++ and OpenGL, featuring manual/automatic control and dynamic lighting.</p>
+            <p class="tb-es">Simulación tridimensional de una planta industrial con brazos robóticos articulados desarrollada en C++ y OpenGL, con control manual/automático e iluminación dinámica.</p>
+            <ul class="tb-en" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Three articulated robots (base, shoulder, elbow, wrist, gripper) with manual and automatic modes</li><li>Dynamic environment with conveyor belts, smoke particles and lighting systems (flickering, rotating, fire)</li><li>Three camera modes (Free, Cinematic, Robot View) with mouse/scroll control</li><li>Use of Normal Maps and Specular Maps for realistic materials</li></ul>
+            <ul class="tb-es" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Tres robots articulados (base, hombro, codo, muñeca, pinza) con modos manual y automático</li><li>Entorno dinámico con cintas transportadoras, partículas de humo y sistemas de iluminación (parpadeante, giratoria, fuego)</li><li>Tres modos de cámara (Libre, Cinemática, Vista de Robot) con control por mouse/scroll</li><li>Uso de Normal Maps y Specular Maps para materiales realistas</li></ul>
+            <div class="tag-list"><span class="tag">C++</span><span class="tag">OpenGL</span><span class="tag">GLEW</span><span class="tag">GLFW</span><span class="tag">GLM</span><span class="tag">Assimp</span><span class="tag">FreeImage</span><span class="tag">CMake</span></div>
+            <a class="btn btn-secondary" href="https://github.com/Daniel77688/Planta-Industrial-Robotizada---Simulaci-n-3D-con-OpenGL" target="_blank" rel="noopener" style="align-self:flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.65.79.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+              <span class="t-en">View on GitHub</span><span class="t-es">Ver en GitHub</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">Decentralized Betting House</h3>
+                <h3 class="tb-es">Casa de Apuestas Descentralizada</h3>
+              </div>
+            </div>
+            <p class="tb-en">Set of Solidity smart contracts simulating a decentralized betting house through a custom ERC-20 token, with full mint and burn control by the main contract.</p>
+            <p class="tb-es">Conjunto de Smart Contracts en Solidity que simula una casa de apuestas descentralizada mediante un token ERC-20 personalizado, con control total de mint y burn por parte del contrato principal.</p>
+            <ul class="tb-en" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Modular architecture with three contracts: ERC20Padre (standard ERC-20 logic), ApuestasToken (access and supply control) and CasaApuestas (business logic)</li><li>Chip purchase with ETH, sports event creation, betting and proportional prize distribution</li><li>Minting when buying chips or winning bets, and burning when betting (token at risk)</li><li>Inheritance and encapsulation (private variables, internal _mint/_burn functions) for security and modularity</li></ul>
+            <ul class="tb-es" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Arquitectura modular con tres contratos: ERC20Padre (lógica estándar ERC-20), ApuestasToken (control de acceso y suministro) y CasaApuestas (lógica de negocio)</li><li>Compra de fichas con ETH, creación de eventos deportivos, apuestas y reparto proporcional de premios</li><li>Uso de mint al comprar fichas o ganar apuestas, y burn al apostar (arriesgo del token)</li><li>Herencia y encapsulación (variables private, funciones internas _mint/_burn) para seguridad y modularidad</li></ul>
+            <div class="tag-list"><span class="tag">Solidity</span><span class="tag">Smart Contracts</span><span class="tag">ERC-20</span></div>
+            <a class="btn btn-secondary" href="https://github.com/vicentenavasmar/Sistema-de-Apuestas-Descentralizado-con-Solidity" target="_blank" rel="noopener" style="align-self:flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.65.79.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+              <span class="t-en">View on GitHub</span><span class="t-es">Ver en GitHub</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">Vaccination Simulator</h3>
+                <h3 class="tb-es">Simulador de Vacunación</h3>
+              </div>
+            </div>
+            <p class="tb-en">Concurrent simulation of a vaccination process during a pandemic, developed in C for the Operating Systems course, using threads and synchronization mechanisms.</p>
+            <p class="tb-es">Simulación concurrente de un proceso de vacunación durante una pandemia, desarrollada en C para la asignatura de Sistemas Operativos, usando hilos y mecanismos de sincronización.</p>
+            <ul class="tb-en" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Multithreaded simulation with factories, inhabitants and centers as independent threads for real concurrency</li><li>Synchronized vaccine production in random batches distributed by demand, with queue management via condition variables</li><li>Centralized global warehouse for efficient redistribution of surplus doses between centers</li><li>Dynamic parameter configuration and final statistical report generation in console and file</li></ul>
+            <ul class="tb-es" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Simulación multihilo con fábricas, habitantes y centros como hilos independientes para concurrencia real</li><li>Producción sincronizada de vacunas en lotes aleatorios distribuidos según demanda, con gestión de colas mediante variables de condición</li><li>Almacén global centralizado para redistribución eficiente de dosis sobrantes entre centros</li><li>Configuración dinámica de parámetros y generación de informe estadístico final en consola y archivo</li></ul>
+            <div class="tag-list"><span class="tag">C</span><span class="tag">pthreads</span><span class="tag">mutexes</span><span class="tag">condition variables</span><span class="tag">CMake</span></div>
+            <a class="btn btn-secondary" href="https://github.com/Daniel77688/Vaccination-Simulator---Operating-Systems" target="_blank" rel="noopener" style="align-self:flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.65.79.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+              <span class="t-en">View on GitHub</span><span class="t-es">Ver en GitHub</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">miniShell</h3>
+                <h3 class="tb-es">miniShell</h3>
+              </div>
+            </div>
+            <p class="tb-en">Custom command-line interpreter (shell) implemented in C, demonstrating process management, command parsing and system call concepts on Unix-like environments.</p>
+            <p class="tb-es">Intérprete de línea de comandos (shell) personalizado implementado en C, que demuestra conceptos de gestión de procesos, parsing de comandos y llamadas al sistema en entornos tipo Unix.</p>
+            <ul class="tb-en" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Command parsing via a custom library (libparser) to tokenize input</li><li>Support for input/output/error redirection (<, >, 2>), background execution (&) and command chaining with pipes (|)</li><li>Basic built-in commands (exit) and custom interactive prompt (msh>)</li></ul>
+            <ul class="tb-es" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Parsing de comandos mediante librería personalizada (libparser) para tokenizar la entrada</li><li>Soporte de redirección de entrada/salida/error (<, >, 2>), ejecución en segundo plano (&) y encadenamiento de comandos con pipes (|)</li><li>Comandos incorporados básicos (exit) y prompt interactivo personalizado (msh>)</li></ul>
+            <div class="tag-list"><span class="tag">C</span><span class="tag">CMake</span><span class="tag">gcc</span></div>
+            <a class="btn btn-secondary" href="https://github.com/Daniel77688/miniShell" target="_blank" rel="noopener" style="align-self:flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.65.79.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+              <span class="t-en">View on GitHub</span><span class="t-es">Ver en GitHub</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">GPU Data Acceleration</h3>
+                <h3 class="tb-es">Aceleración de Datos en GPU</h3>
+              </div>
+            </div>
+            <p class="tb-en">Parallel and distributed processing solution in C++20 for large geospatial CSV datasets using MPI, deployed on a real 5-node cluster.</p>
+            <p class="tb-es">Solución de procesamiento paralelo y distribuido en C++20 para tratar grandes datasets geoespaciales CSV mediante MPI, desplegada sobre un clúster real de 5 nodos.</p>
+            <ul class="tb-en" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Data distribution with MPI_Scatterv, reductions (Reduce/Allreduce) and gathering with Gather across 5 processes, one per continent</li><li>Distributed counting of sightings by Pokémon ID and search for the rarest one per continent</li><li>Greedy TSP resolution between continents using Haversine distance</li><li>Optimized compilation with CMake (-O3 -march=native) and automated cluster deployment via SSH script</li></ul>
+            <ul class="tb-es" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Distribución de datos con MPI_Scatterv, reducciones (Reduce/Allreduce) y recolección con Gather entre 5 procesos, uno por continente</li><li>Conteo distribuido de avistamientos por ID de Pokémon y búsqueda del más raro por continente</li><li>Resolución de TSP greedy entre continentes usando distancia de Haversine</li><li>Compilación optimizada con CMake (-O3 -march=native) y despliegue automatizado al clúster vía script SSH</li></ul>
+            <div class="tag-list"><span class="tag">C++20</span><span class="tag">MPI (OpenMPI)</span><span class="tag">CMake</span><span class="tag">GLM</span><span class="tag">GCC/mpicxx</span></div>
+            <a class="btn btn-secondary" href="https://github.com/vicentenavasmar/Aceleracion-de-Datos-en-GPU" target="_blank" rel="noopener" style="align-self:flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.65.79.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+              <span class="t-en">View on GitHub</span><span class="t-es">Ver en GitHub</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">Distributed Data Processing</h3>
+                <h3 class="tb-es">Procesamiento Distribuido de Datos</h3>
+              </div>
+            </div>
+            <p class="tb-en">Parallel and distributed processing solutions in C++20 for large CSV datasets, with two comparable approaches: shared memory and distributed cluster processing.</p>
+            <p class="tb-es">Soluciones de procesamiento paralelo y distribuido en C++20 para tratar grandes datasets CSV, con dos enfoques comparables: memoria compartida y procesamiento distribuido en clúster.</p>
+            <ul class="tb-en" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Modular architecture with computeShared and computeDistributed executables built on a common libDomain library</li><li>Generic CSV loading via reusable CSVLoader.h module</li><li>Automated cluster deployment with script and hosts configuration file</li><li>Debug and Release builds with GCC 14 for full C++20 compatibility</li></ul>
+            <ul class="tb-es" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Arquitectura modular con ejecutables computeShared y computeDistributed sobre biblioteca común libDomain</li><li>Carga genérica de CSV mediante módulo reutilizable CSVLoader.h</li><li>Despliegue automatizado en clúster con script y fichero de configuración de hosts</li><li>Builds Debug y Release con GCC 14 para compatibilidad completa con C++20</li></ul>
+            <div class="tag-list"><span class="tag">C++20</span><span class="tag">CMake</span><span class="tag">GCC/G++ 14</span><span class="tag">MPI/Sockets</span><span class="tag">CSV</span></div>
+            <a class="btn btn-secondary" href="https://github.com/vicentenavasmar/Procesamiento-Distribuido-de-Datos" target="_blank" rel="noopener" style="align-self:flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.65.79.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+              <span class="t-en">View on GitHub</span><span class="t-es">Ver en GitHub</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h3 class="tb-en">Parallel Data Processing</h3>
+                <h3 class="tb-es">Procesamiento Paralelo de Datos</h3>
+              </div>
+            </div>
+            <p class="tb-en">Parallel data processing solution in C++20 aimed at efficiently handling CSV datasets through a shared-memory approach.</p>
+            <p class="tb-es">Solución de procesamiento paralelo de datos en C++20 orientada al tratamiento eficiente de datasets CSV mediante un enfoque de memoria compartida.</p>
+            <ul class="tb-en" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Modular computeShared executable, supported by the auxiliary libDomain library</li><li>Compilation with CMake in Debug and Release modes, compatible with GCC 14 and C++20</li><li>Input via external CSV file passed as an argument, designed for large data volumes</li></ul>
+            <ul class="tb-es" style="padding-left:1.25rem; color:var(--color-text-muted);"><li>Ejecutable computeShared modular, apoyado en la biblioteca auxiliar libDomain</li><li>Compilación con CMake en modos Debug y Release, compatible con GCC 14 y C++20</li><li>Entrada mediante archivo CSV externo pasado como argumento, pensado para volúmenes de datos grandes</li></ul>
+            <div class="tag-list"><span class="tag">C++20</span><span class="tag">CMake</span><span class="tag">GCC/G++ 14</span></div>
+            <a class="btn btn-secondary" href="https://github.com/vicentenavasmar/Tratamiento-Paralelo-de-Datos" target="_blank" rel="noopener" style="align-self:flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.65.79.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+              <span class="t-en">View on GitHub</span><span class="t-es">Ver en GitHub</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <div class="section-head">
+          <h2><span class="t-en">Education</span><span class="t-es">Educación</span></h2>
+        </div>
+        <div class="timeline">
+
+          <!-- URJC -->
+          <article class="timeline-item">
+            <h3>Universidad Rey Juan Carlos</h3>
+            <p class="muted">
+              <span class="t-en">Degree in Computer Engineering</span>
+              <span class="t-es">Grado en Ingeniería Informática</span>
+              · 09/2022 – <span class="t-en">Present</span><span class="t-es">Actualidad</span>
+            </p>
+            <ul>
+              <li class="tli-en">Endorsed by the international EURO-INF quality seal.</li>
+              <li class="tli-es">Avalado por el sello internacional de calidad EURO-INF.</li>
+              <li class="tli-en">With distinction (highest honors) in Artificial Intelligence and Embedded and Real-Time
+                Systems.</li>
+              <li class="tli-es">Matrícula de honor en Inteligencia Artificial y Sistemas Empotrados y De Tiempo Real.
+              </li>
+              <li class="tli-en">Pending internships and final degree project in the 2026-27 course.</li>
+              <li class="tli-es">A falta de prácticas y trabajo de fin de grado en el curso 26/27.</li>
+            </ul>
+          </article>
+
+          <!-- VIZJA -->
+          <article class="timeline-item">
+            <h3>Uniwersytet VIZJA</h3>
+            <p class="muted">
+              <span class="t-en">Computer Science — Erasmus Programme</span>
+              <span class="t-es">Informática — Programa Erasmus</span>
+              · 02/2025 – 06/2025
+            </p>
+            <p class="tb-en">Exchange semester at VIZJA University in Warsaw, Poland as part of the Erasmus+ programme.
+            </p>
+            <p class="tb-es">Semestre de intercambio en VIZJA University en Varsovia, Polonia, dentro del programa
+              Erasmus+.</p>
+          </article>
+
+          <!-- Bachillerato -->
+          <article class="timeline-item">
+            <h3><span class="t-en">Scientific Baccalaureate</span><span class="t-es">Bachillerato Científico</span></h3>
+            <p class="muted">IES Alfredo Kraus · 09/2020 – 07/2022</p>
+            <p class="tb-en">Pre-university scientific track leading to the Computer Engineering degree.</p>
+            <p class="tb-es">Bachillerato de ciencias previo al Grado en Ingeniería Informática.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="container">
+        <div class="section-head">
+          <h2><span class="t-en">Certifications</span><span class="t-es">Licencias</span></h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>C1 Advanced Certificate (Cambridge English)</h3>
+            <p class="muted">Cambridge English · 13/12/2025</p>
+            <p class="tb-en">Official advanced-level English certification issued by Cambridge Assessment English.</p>
+            <p class="tb-es">Certificación oficial de inglés de nivel avanzado emitida por Cambridge Assessment English.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <h2><span class="t-en">Contact</span><span class="t-es">Contacto</span></h2>
+            <p class="muted tb-en">Feel free to reach out via email or LinkedIn.</p>
+            <p class="muted tb-es">No dudes en contactarme por correo electrónico o LinkedIn.</p>
+          </div>
+          <div class="contact-list">
+            <a href="mailto:vicente.navas.martinez@gmail.com">vicente.navas.martinez@gmail.com</a>
+            <a href="https://www.linkedin.com/in/vicente-navas-martinez-aa8ba63b4/" target="_blank"
+              rel="noopener">linkedin.com/in/vicente-navas-martinez</a>
+            <span>+34 638 27 01 32</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"></div>
+  </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+
+      // ── Theme ──────────────────────────────────────────────────────
+      const themeBtn = document.getElementById('themeBtn');
+      let theme = 'light';
+      const ICONS = {
+        light: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+        dark: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      };
+      function setTheme(t) {
+        theme = t;
+        root.setAttribute('data-theme', t);
+        themeBtn.innerHTML = ICONS[t];
+      }
+      setTheme('light');
+      themeBtn.addEventListener('click', () => setTheme(theme === 'light' ? 'dark' : 'light'));
+
+      // ── Language ───────────────────────────────────────────────────
+      const langSelect = document.getElementById('langSelect');
+      let lang = 'en';
+
+      function setLang(l) {
+        lang = l;
+        root.setAttribute('data-lang', l);
+        root.lang = l;
+      }
+
+      setLang('en');
+      langSelect.value = 'en';
+      langSelect.addEventListener('change', (e) => setLang(e.target.value));
+
+      // ── CV download dropdown (independent of site language) ─────────
+      document.querySelectorAll('[data-cv-dropdown]').forEach((dropdown) => {
+        const toggle = dropdown.querySelector('[data-cv-toggle]');
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          document.querySelectorAll('[data-cv-dropdown]').forEach((d) => {
+            if (d !== dropdown) d.classList.remove('open');
+          });
+          dropdown.classList.toggle('open');
+        });
+      });
+      document.addEventListener('click', () => {
+        document.querySelectorAll('[data-cv-dropdown]').forEach((d) => d.classList.remove('open'));
+      });
+    })();
+  </script>
+</body>
+
+</html>
