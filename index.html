@@ -939,7 +939,7 @@
 
       // ── Language ───────────────────────────────────────────────────
       const langSelect = document.getElementById('langSelect');
-      let lang = 'en';
+      let lang = 'es';
 
       function setLang(l) {
         lang = l;
@@ -947,8 +947,8 @@
         root.lang = l;
       }
 
-      setLang('en');
-      langSelect.value = 'en';
+      setLang('es');
+      langSelect.value = 'es';
       langSelect.addEventListener('change', (e) => setLang(e.target.value));
 
       // ── CV download dropdown (independent of site language) ─────────
